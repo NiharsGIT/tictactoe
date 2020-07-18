@@ -1,5 +1,5 @@
 const button = document.getElementById("reset");
-let cells = document.querySelectorAll(".row > div");
+
 const winnigMsg = document.querySelector(".winner");
 var player1 = "X";
 var player2 = "O";
@@ -17,16 +17,18 @@ winPatterns = [
   [2, 5, 8],
   [3, 4, 5],
 ];
-
+let cells = document.querySelectorAll(".row > div");
 button.addEventListener("click", reset);
-console.log(button);
-console.log(cells);
+//console.log(button);
+//console.log(cells);
 
 main();
 
 function main() {
   for (let i = 0; i <= cells.length; i++) {
-    cells[i].addEventListener("click", cellClicked);
+    try {
+      cells[i].addEventListener("click", cellClicked);
+    } catch (e) {}
     valueArray[i] = i;
   }
 }
